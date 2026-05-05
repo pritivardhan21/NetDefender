@@ -3,7 +3,7 @@
 [Badges: Python | Mininet | Ryu Controller | Z-Score | Shannon Entropy | Cowrie | License: MIT]
 
 ## Abstract
-NetDefender is a Software-Defined Networking (SDN) based zero-day threat detection system that employs purely mathematical heuristics — specifically Z-Score normalization and Shannon Entropy analysis — to identify anomalous traffic patterns in real time. Unlike contemporary approaches that rely on computationally heavy Machine Learning (ML) classifiers, NetDefender is signature-agnostic and model-free, operating without any labeled training dataset. This design choice ensures consistent, millisecond-level performance against novel, unseen attack vectors.
+NetDefender is a Software-Defined Networking (SDN) based zero-day threat detection system that employs purely mathematical heuristics — specifically Z-Score normalization and Shannon Entropy analysis — to identify anomalous traffic patterns in real time. Unlike contemporary approaches that rely on computationally heavy Machine Learning (ML) classifiers, NetDefender is signature-agnostic and model-free, operating without any labeled training dataset. This design choice ensures deterministic detection within a single 3-second polling epoch against novel, unseen attack vectors.
 
 ## Design Philosophy — Why NOT Machine Learning
 Most IDS/IPS systems face a fundamental limitation: they are only as good as their training data. NetDefender makes a deliberate architectural decision to avoid ML for three academically defensible reasons:
@@ -30,6 +30,7 @@ Most IDS/IPS systems face a fundamental limitation: they are only as good as the
   │    ├─ OpenFlow Meter Table (Throttle)       │
   │    └─ Redirection to Cowrie SSH Honeypot    │
   └─────────────────────────────────────────────┘
+```
 ## Mathematical Core
 ### Z-Score Anomaly Detection
 Z = (x - μ) / σ 
@@ -57,7 +58,7 @@ Tested on a physical ASUS RS300-E8-PS4 rack server, NetDefender demonstrated det
 * `NetDefender_Detailed_Project_Report.docx`: Comprehensive research paper detailing the architecture.
 
 ## Research Context & Credits
-This project originated from research conducted at National Formosa University, Taiwan (FTIP Program, Feb–Jul 2026) and was extended as a standalone implementation. 
+This system was developed and validated during a research internship at National Formosa University, Taiwan (FTIP Program, Feb–Jul 2026). A research paper describing the theoretical foundations is currently under submission.
 
 * **Author:** Pritivardhan Chothe
 * **Supervisor:** Prof. Ming-Shen Jian
