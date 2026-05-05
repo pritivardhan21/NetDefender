@@ -17,6 +17,7 @@ Most IDS/IPS systems face a fundamental limitation: they are only as good as the
 * **Tarpit & Honeypot Redirection:** Simultaneously applies a bandwidth throttle (>99%) via OpenFlow Meter Tables and transparently redirects attacker traffic into an isolated Cowrie SSH honeypot for live threat intelligence capture.
 
 ## Architecture
+```text
   ┌─────────────────────────────────────────────┐
   │  Mininet Virtual Topology / Physical OVS    │
   │          ↓  OpenFlow 1.3                    │
@@ -29,7 +30,6 @@ Most IDS/IPS systems face a fundamental limitation: they are only as good as the
   │    ├─ OpenFlow Meter Table (Throttle)       │
   │    └─ Redirection to Cowrie SSH Honeypot    │
   └─────────────────────────────────────────────┘
-
 ## Mathematical Core
 ### Z-Score Anomaly Detection
 Z = (x - μ) / σ 
